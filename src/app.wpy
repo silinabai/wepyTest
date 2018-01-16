@@ -55,9 +55,9 @@
 
     getUserInfo(cb) {
       const that = this
-      if (this.globalData.userInfo) {
-        return this.globalData.userInfo
-      }
+//      if (this.globalData.userInfo) {
+//        return this.globalData.userInfo
+//      }
       wepy.getUserInfo({
         success (res) {
           that.globalData.userInfo = res.userInfo
