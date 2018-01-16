@@ -1,0 +1,71 @@
+<style lang="scss">
+  .userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .userinfo-avatar {
+    width: 160rpx;
+    height: 160rpx;
+    display: block;
+    border-radius: 50%;
+  }
+
+  .userinfo-nickname {
+    color: #aaa;
+  }
+</style>
+<template>
+  <view class="container">
+    <view class="userinfo" @tap="handleViewTap">
+      <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"/>
+      <view class="userinfo-nickname">{{ userInfo.nickName }}</view>
+    </view>
+    <demo></demo>
+    <text @tap="goToTest1">去另一个页面</text>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import testMixin from '../common/es6/test'
+  import Demo from '../components/demo'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: 'test'
+    }
+    components = {
+      demo: Demo
+    }
+
+    mixins = [testMixin]
+
+    data = {
+      userInfo: {}
+    }
+
+    computed = {}
+
+    methods = {
+      goToTest1 () {
+        wepy.navigateTo({
+          url: 'test'
+        })
+      }
+    }
+
+    events = {}
+
+    onLoad() {
+      let self = this
+      this.$parent.getUserInfo((userInfo) => {
+        if (userInfo) {
+          self.userInfo = userInfo
+        }
+        self.$apply()
+      })
+    }
+  }
+</script>

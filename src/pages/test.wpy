@@ -1,0 +1,20 @@
+<style lang="scss">
+  .test1 {
+    font-size: 14px;
+    text-align: center;
+    color: red;
+  }
+</style>
+<template>
+  <view class="test1">hello world</view>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class Test extends wepy.page {
+    config = {
+      navigationBarTitleText: 'test1'
+    }
+  }
+
+</script>

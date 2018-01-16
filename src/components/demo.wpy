@@ -1,0 +1,24 @@
+<style lang="scss" rel="stylesheet/scss">
+  .demo {
+    margin:20rpx auto;
+
+    text {
+      color: red;
+      font-size: 40rpx;
+    }
+  }
+
+</style>
+<template>
+  <view class="demo">
+    <text>我是测试组件</text>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class Demo extends wepy.component {
+    data = {}
+  }
+
+</script>
