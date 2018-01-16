@@ -1,4 +1,7 @@
-<style lang="scss">
+<style lang="scss" rel="stylesheet/scss">
+  @import "../common/scss/base.scss";
+  @import "../common/scss/_variables.scss";
+
   .userinfo {
     display: flex;
     flex-direction: column;
@@ -13,7 +16,7 @@
   }
 
   .userinfo-nickname {
-    color: #aaa;
+    color: $text_color_1;
   }
 </style>
 <template>
